@@ -31,8 +31,9 @@ public class FindAllFilesSelsectGivenExtn {
         };
         listOfFiles=directory.listFiles(fileNameFilter);
         File file=listOfFiles[0];
+        System.out.println(file);
         try (FileInputStream fin = new FileInputStream(file)) {
-            byte[] byteArray=new byte[(int)listOfFiles.length];
+            byte[] byteArray=new byte[(int)file.length()];
             fin.read(byteArray);
             String string=new String(byteArray);
             System.out.println(string);
